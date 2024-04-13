@@ -49,7 +49,7 @@ So I can quit forgetting and not having any consistent notes 🙄😒 Peek the d
     ]
 ```
 
-### Way 2, using response and a template
+### Way 2, using render and a template
 
 4. Under the app's folder, create a `urls.py` file as: 
 ```
@@ -57,13 +57,13 @@ So I can quit forgetting and not having any consistent notes 🙄😒 Peek the d
     from . import views
 
     urlpatterns = [
-        path('{name-of-app}', views.{name-of-app})
+        path('{name-of-app}', views.{name-of-app})    # be mindful of how this is declared.
     ]
 ```
 5. Under the app's folder, create a `templates/{name-of-app}` path, then make a base HTML file within. Then append this to the app's `views.py` file:
 ```
     def {name-of-app}(request):
-    return render(request, '{name-of-app}/{base}.html', {})
+        return render(request, '{name-of-app}/{base}.html', {})
 ```
 6. Up one folder into the core project folder (sibling to your app folder), update the `urls.py` to reflect:
 ```
@@ -80,3 +80,7 @@ So I can quit forgetting and not having any consistent notes 🙄😒 Peek the d
 I suppose the structures of the urlpatterns between the app and project's urls.py file can be interchangeable, I'll have to look closer. But this strategy prevents dependency. Fun fact - views in the MVT model handle requests and responses.
 
 7. On the server URL in the browser, if you append the path `/{name-of-project}` as designated in the views file, then you should see the HTTP Response or render. Great. You have a minimally functioning base page.
+
+## Keep in mind
+
+- If you copied an app to another project, did you add it to the settings.py of the project folder? Did you rename the class and the name property within it under `apps.py` if it conflicts with an existing one? Did you delete any cache and init files?
