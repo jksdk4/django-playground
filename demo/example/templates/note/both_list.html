@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Template Response 2</title>
+      </head>
+      <body>
+        <h1>This is a dynamic template with both.</h1>
+        <main>
+            <h2>Notes:</h2>
+            <ol>
+                {% for note in notes %}
+                <li>{{note.title}}</li>
+                {% endfor %}
+            </ol>
+            <h2>Images:</h2>
+            <ul>
+                {% for image in images %}
+                <li>{{image.alt}}</li>
+                {% endfor %}
+            </ul>
+        </main>
+      </body>
+</html>

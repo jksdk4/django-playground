@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('demo/', include('home.urls')),
-    path('', include('home2.urls'))
+    path('', include('home2.urls')),
+    path('dynamic-template/', include('example.urls'))
 ]
