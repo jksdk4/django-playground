@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Smart Notes</title>
-      </head>
-      <body>
-        <h1>xtra Smart notEs</h1>
-        <main>
-            <p>This is the welcome page template from the home directory.</p>
-            <p>This change makes class based views instead of function based ones.</p>
-        </main>
-      </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Extra Smart Notes</h1>
+  <main>
+      <h2>Today is {{today}}.</h2>
+      <p>This is the welcome page template from the home directory.</p>
+      <p>This change makes class based views instead of function based ones.</p>
+      <p>28 Apr - This update uses static templates. Probably looks nicer now.</p>
+      <a href="{% url 'notes.list' %}" class="btn btn-primary">Check out these smart notes.</a>
+  </main>
+{% endblock %}
